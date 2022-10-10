@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="city"/>
+    <button onclick="getdata()" id="submit">submit</button>
+    
+</body>
+</html>
+<script>
+  
+
+
+
+
+    function getdata(){
+        let city=document.getElementById("city").value
+        // console.log(city)
+
+        const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5ac0656f96c1557ec4828acb90ba08f6`;
+
+        fetch(url)
+    .then(function(res){
+     return res.json();
+    })
+    .then(function(res){
+        console.log(res)
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+    }
+</script>
